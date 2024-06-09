@@ -64,7 +64,29 @@ html {
   scroll-behavior: smooth;
 }
 
+/*Scrollbar*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 /* Styles */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
   background-color: #020617;
   font-family: "Roboto", sans-serif;
@@ -192,6 +214,51 @@ h2 {
   animation: slide-in-blurred-top 1ms cubic-bezier(0.23, 1, 0.32, 1) both;
   animation-timeline: view();
   animation-range: cover 0% cover 80%;
+}
+
+.side-element {
+  z-index: 5;
+  width: 700px;
+  height: 600px;
+  right: -500px;
+  position: fixed;
+  -webkit-animation: rotate 1ms ease-in-out both;
+  animation: rotate 1ms ease-in-out both;
+  animation-timeline: scroll();
+}
+
+.side-element-1 {
+  top: 0;
+  filter: drop-shadow(0px 0px 32px rgba(71, 19, 214, 0.9));
+  -webkit-filter: drop-shadow(0px 0px 32px rgba(71, 19, 214, 0.9));
+}
+
+.side-element-2 {
+  top: -100px;
+  filter: drop-shadow(0px 0px 32px #c026d3);
+  -webkit-filter: drop-shadow(0px 0px 32px #c026d3);
+}
+
+@-webkit-keyframes rotate {
+  from {
+    transform: rotate(45deg);
+    margin-top: 0px;
+  }
+  to {
+    transform: rotate(405deg);
+    margin-top: 500px;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(45deg);
+    margin-top: 0px;
+  }
+  to {
+    transform: rotate(405deg);
+    margin-top: 500px;
+  }
 }
 
 @-webkit-keyframes text-focus-in {
